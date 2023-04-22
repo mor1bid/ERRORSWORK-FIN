@@ -13,9 +13,9 @@ public class dz {
         boolean here = true;
         Scanner work = new Scanner(System.in);
         System.out.println("Здравствуйте!");
-        while (here) 
+        while (here)
         {
-            System.out.println(" Введите, пожалуйста, через пробел свои ФИО, дату рождения(дд.мм.гггг без точек), номер телефона (только числа) и пол:");
+            System.out.println(" Введите, пожалуйста, через пробел свои ФИО, дату рождения (дд.мм.гггг без точек), \nномер телефона (только числа) и пол:");
             String data = work.nextLine();
             Matcher mat = ern.matcher(data);
             String[] userdata = data.split(" ");
@@ -31,7 +31,7 @@ public class dz {
             {
                 for (int i = 0; i<userdata.length; i++) 
                 {
-                    if(userdata[i] instanceof String) 
+                    if(userdata[i].matches("[a-zA-Z]+")) 
                     {
                         FileWriter storage = new FileWriter(new File(userdata[i] + ".txt"), StandardCharsets.UTF_8, true);
                         for (int j = 0; j < userdata.length; j++)
